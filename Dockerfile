@@ -25,13 +25,13 @@ RUN pip install logging_exceptions \
     setuptools \
     soupsieve
 WORKDIR /srv
-RUN git clone https://github.com/bagnacan/forgi.git --branch triplexer --depth 1
+COPY forgi forgi
 WORKDIR forgi
 RUN python setup.py install
 
 # ViennaRNA forna
 WORKDIR /srv
-RUN git clone https://github.com/bagnacan/forna.git --branch triplexer --depth 1
+COPY forna forna
 
 ENV PATH="/srv/forna:${PATH}"
 EXPOSE 8080
