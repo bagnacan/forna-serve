@@ -1,0 +1,8 @@
+[submodule "forna"]
+	path = forna
+	url = git@github.com:bagnacan/forna.git
+	branch = triplexer
+[submodule "forgi"]
+	path = forgi
+	url = git@github.com:bagnacan/forgi.git
+	branch = triplexer
