@@ -10,7 +10,6 @@ database.
 
 - [Installation requirements](#installation-requirements)
 - [Run forna-serve](#run-forna-serve)
-- [Usage examples](#usage-examples)
 
 
 
@@ -42,5 +41,3 @@ localhost:9090/ping
 You should receive a ``pong`` reply. If so, the service is up and running!  
 You can now send proper forna queries to visualize and edit RNA triplexes.
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
-
-
