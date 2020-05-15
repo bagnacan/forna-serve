@@ -55,24 +55,74 @@ visualizations, and provide a sample query.
 
 
 
+### URL syntax
+
+The syntax to visualize RNA molecules is based on the one defined by forna, and
+extended to distinguish the different RNAs of a triplex:
+
+1. Host  
+If you are running the forna-serve container on your localhost, this will
+likely look like ``http://localhost:9090/``
+
+2. Identifier  
+A name for the visualized triplex *T*, which must be provided as ``?id=url/T``
+
+3. Sequence  
+The full sequence *S* of the complex, to be provided as ``&sequence=S``
+
+4. Structure  
+The dot-bracket notation *D* of the complex, to be provided by ``&structure=D``
+
+5. Target gene  
+The target gene name *G*, ``&gene=G``
+
+6. 1st miRNA  
+The 1st miRNA name *M1*, ``&mirna1=M1``
+
+7. 2nd miRNA  
+The 2nd miRNA name *M2*, ``&mirna2=M2``
+
+8. Colors  
+The color scheme of the 3 different segments, to be counted in nucleotides.
+Supposing that:
+  - *G* should be colored lightgrey, and its sequence is *GL* nucleotides long
+  - *M1* should be colored lightgreen, and its sequence is *M1L* nucleotides long
+  - *M2* should be colored red, and sequence is *M2L* nucleotides long
+The scheme of the triplex *T* must be indicated by:
+```
+&colors=>T\n
+1-GL:lightgrey\n
+(GL+1)-M1L:lightgreen\n
+(M1L+1)-M2L:red
+```
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+
+
 ### Example
 
-Using the aforementioned syntax, we compose a URL to display the RNA triplex
-formed by:
-- Human target gene [E2F1](https://www.ncbi.nlm.nih.gov/nuccore/NM_005225)  
-(sequence: ``ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaaggu``)
-- Human miRNA [hsa-miR-205](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000266)  
-(sequence: ``uccuucauuccaccggagucug``)
-- Human miRNA [hsa-miR-342-3p](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000753)  
-(sequence: ``ucucacacagaaaucgcacccgu``)
+Using the aforementioned syntax, we compose a URL to display the RNA triplex [97544](https://triplexrna.org/human/E/E2F1_hsa-miR-205_hsa-miR-342-3p%20%28MFE-50.563%29.png).
+The triplex is formed by Human (hg19) target gene [E2F1](https://www.ncbi.nlm.nih.gov/nuccore/NM_005225),
+miRNA [hsa-miR-205](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000266),
+and miRNA [hsa-miR-342-3p](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000753).  
 
-These form a complex with the dot-bracket notation (the ``+`` sign separates
-their 3 sequences):
+The attributes:
+- E2F1
+  - sequence ``ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaaggu``
+  - sequence length ``54`` nt.
+  - color ``lightgrey``
+- miRNA hsa-miR-205
+  - sequence ``uccuucauuccaccggagucug``
+  - sequence length ``22`` nt.
+  - color ``lightgreen``
+- miRNA hsa-miR-342-3p
+  - sequence ``ucucacacagaaaucgcacccgu``
+  - sequence length ``23`` nt.
+  - color ``red``
+- Dot-bracket notation (the ``+`` sign separates their 3 sequence):  
 ```
 .((((.((((.(.(((((((((((((......)))))..((((((((((((((.+.)))))))))).))))......+.))))))))..).)))).)))).
 ```
-
-We will color the mRNA in grey, miRNA1 in green, and miRNA2 in red.
 
 Run the forna-serve container. Open the browser, and type:
 ```
