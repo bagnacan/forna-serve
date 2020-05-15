@@ -106,17 +106,13 @@ and miRNA [hsa-miR-342-3p](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIM
 2. Triplex identifier  
   ``?id=url/97544``
 3. Sequence  
-  ```
-  &sequence=ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaagguuccuucauuccaccggagucugucucacacagaaaucgcacccgu
-  ```  
+  ```&sequence=ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaagguuccuucauuccaccggagucugucucacacagaaaucgcacccgu```  
   Where:
     - E2F1 ``ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaaggu``
     - hsa-miR-205 ``uccuucauuccaccggagucug``
     - hsa-miR-342-3p ``ucucacacagaaaucgcacccgu``
 4. Structure  
-  ```
-  &structure=.((((.((((.(.(((((((((((((......)))))..((((((((((((((..)))))))))).)))).......))))))))..).)))).)))).
-  ```
+  ```&structure=.((((.((((.(.(((((((((((((......)))))..((((((((((((((..)))))))))).)))).......))))))))..).)))).)))).```
 5. Target gene  
   ``&gene=E2F1``
 6. 1st miRNA  
