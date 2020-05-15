@@ -64,7 +64,7 @@ extended to distinguish the different RNAs of a triplex:
 If you are running the forna-serve container on your localhost, this will
 likely look like ``http://localhost:9090/``
 
-2. Identifier  
+2. Triplex identifier  
 A name for the visualized triplex *T*, which must be provided as ``?id=url/T``
 
 3. Sequence  
@@ -83,7 +83,7 @@ The 1st miRNA name *M1*, ``&mirna1=M1``
 The 2nd miRNA name *M2*, ``&mirna2=M2``
 
 8. Colors  
-The color scheme of the 3 different segments, to be counted in nucleotides.
+The color scheme of the 3 different segments, to be counted in nucleotides.  
 Supposing that:
   - *G* should be colored lightgrey, its sequence starts at nt. 1, and ends at nt. *GL*
   - *M1* should be colored lightgreen, its sequence starts at nt. *GL+1* and ends at nt. *M1L*
@@ -96,33 +96,42 @@ The scheme of the triplex *T* will be: ``&colors=>T\n1-GL:lightgrey\nGL+1-M1L:li
 ### Example
 
 Using the aforementioned syntax, we compose a URL to display the RNA triplex [97544](https://triplexrna.org/human/E/E2F1_hsa-miR-205_hsa-miR-342-3p%20%28MFE-50.563%29.png).
+
 The triplex is formed by Human (hg19) target gene [E2F1](https://www.ncbi.nlm.nih.gov/nuccore/NM_005225),
 miRNA [hsa-miR-205](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000266),
 and miRNA [hsa-miR-342-3p](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000753).  
 
-The attributes:
-- E2F1
-  - sequence ``ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaaggu``
-  - sequence length ``54`` nt.
-  - color ``lightgrey``
-- miRNA hsa-miR-205
-  - sequence ``uccuucauuccaccggagucug``
-  - sequence length ``22`` nt.
-  - color ``lightgreen``
-- miRNA hsa-miR-342-3p
-  - sequence ``ucucacacagaaaucgcacccgu``
-  - sequence length ``23`` nt.
-  - color ``red``
-- Dot-bracket notation (the ``+`` sign separates their 3 sequence):  
-```
-.((((.((((.(.(((((((((((((......)))))..((((((((((((((.+.)))))))))).))))......+.))))))))..).)))).)))).
-```
+1. Host  
+  ``http://localhost:9090``
+2. Triplex identifier  
+  ``?id=url/97544``
+3. Sequence  
+  ```&sequence=ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaagguuccuucauuccaccggagucugucucacacagaaaucgcacccgu```  
+  Where:
+    - E2F1 ``ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaaggu``
+    - hsa-miR-205 ``uccuucauuccaccggagucug``
+    - hsa-miR-342-3p ``ucucacacagaaaucgcacccgu``
+4. Structure  
+  ```&structure=.((((.((((.(.(((((((((((((......)))))..((((((((((((((..)))))))))).)))).......))))))))..).)))).)))).```
+5. Target gene  
+  ``&gene=E2F1``
+6. 1st miRNA  
+  ``&mirna1=hsa-miR-205``
+7. 2nd miRNA  
+  ``&mirna2=hsa-miR-342-3p``
+8. Colors  
+  ``&colors=%3E97544\n1-54:lightgray\n55-76:lightgreen\n77-99:red``  
+  Where:
+    - E2F1's sequence starts at nt. 1 and ends at nt. 54 (lightgray)
+    - hsa-miR-205's sequence starts at nt. 5 and ends at nt. 76 (lightgreen)
+    - hsa-miR-342-3p's sequence starts at nt. 77 and ends at nt. 99 (red)
 
-Run the forna-serve container. Open the browser, and type:
+You can now assemble the full URL, and type it in the browser:
 ```
 http://localhost:9090/?id=url/97544&sequence=ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaagguuccuucauuccaccggagucugucucacacagaaaucgcacccgu&structure=.((((.((((.(.(((((((((((((......)))))..((((((((((((((..)))))))))).)))).......))))))))..).)))).)))).&gene=E2F1&mirna1=hsa-miR-205&mirna2=hsa-miR-342-3p&colors=%3E97544\n1-54:lightgray\n55-76:lightgreen\n77-99:red
 ```
 
+You will visualize something like this:
 <p align="center">
   <img align="center"src="utils/triplex.png"height="300px"alt="Sample triplex E2F1 + hsa-miR-205 + hsa-miR-342-3p"valign="top"/>
 </p>
