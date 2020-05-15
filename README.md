@@ -85,15 +85,15 @@ The 2nd miRNA name *M2*, ``&mirna2=M2``
 8. Colors  
 The color scheme of the 3 different segments, to be counted in nucleotides.
 Supposing that:
-  - *G* should be colored lightgrey, and its sequence is *GL* nucleotides long
-  - *M1* should be colored lightgreen, and its sequence is *M1L* nucleotides long
-  - *M2* should be colored red, and sequence is *M2L* nucleotides long
+  - *G* should be colored lightgrey, its sequence starts at nt. 1, and ends at nt. *GL*
+  - *M1* should be colored lightgreen, its sequence starts at nt. *GL+1* and ends at nt. *M1L*
+  - *M2* should be colored red, its sequence starts at nt. *M1L+1* and ends at nt. *M2L*
 The scheme of the triplex *T* must be indicated by:
 ```
 &colors=>T\n
 1-GL:lightgrey\n
-(GL+1)-M1L:lightgreen\n
-(M1L+1)-M2L:red
+GL+1-M1L:lightgreen\n
+M1L+1-M2L:red
 ```
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
