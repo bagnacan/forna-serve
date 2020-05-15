@@ -49,10 +49,37 @@ You can now send proper forna queries to visualize and edit RNA triplexes.
 
 ## Usage
 
-Here we explain the input syntax that is required for requesting RNA triplex
-visualizations, and provide an example to display the triplex formed by:
+Here we explain the URL syntax that is required for requesting RNA triplex
+visualizations, and provide a sample query.
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
-- Human target gene [E2F1](https://www.ncbi.nlm.nih.gov/nuccore/NM_005225)
-- Human miRNA [hsa-miR-205](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000266)
-- Human miRNA [hsa-miR-342-3p](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000753).
+
+
+### Example
+
+Using the aforementioned syntax, we compose a URL to display the RNA triplex
+formed by:
+- Human target gene [E2F1](https://www.ncbi.nlm.nih.gov/nuccore/NM_005225)  
+(sequence: ``ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaaggu``)
+- Human miRNA [hsa-miR-205](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000266)  
+(sequence: ``uccuucauuccaccggagucug``)
+- Human miRNA [hsa-miR-342-3p](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000753)  
+(sequence: ``ucucacacagaaaucgcacccgu``)
+
+These form a complex with the dot-bracket notation (the ``+`` sign separates
+their 3 sequences):
+```
+.((((.((((.(.(((((((((((((......)))))..((((((((((((((.+.)))))))))).))))......+.))))))))..).)))).)))).
+```
+
+We will color the mRNA in grey, miRNA1 in green, and miRNA2 in red.
+
+Run the forna-serve container. Open the browser, and type:
+```
+http://localhost:9090/?id=url/97544&sequence=ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaagguuccuucauuccaccggagucugucucacacagaaaucgcacccgu&structure=.((((.((((.(.(((((((((((((......)))))..((((((((((((((..)))))))))).)))).......))))))))..).)))).)))).&gene=E2F1&mirna1=hsa-miR-205&mirna2=hsa-miR-342-3p&colors=%3E97544\n1-54:lightgray\n55-76:lightgreen\n77-99:red
+```
+
+<p align="center">
+  <img align="center"src="utils/triplex.png"height="300px"alt="Sample triplex E2F1 + hsa-miR-205 + hsa-miR-342-3p"valign="top"/>
+</p>
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
