@@ -5,7 +5,7 @@
 # forna-serve
 
 Forna-serve wraps a custom ViennaRNA [forna](https://github.com/ViennaRNA/forna)
-web-server, to display RNA triplexes as shown in the [TriplexRNA](https://triplexrna.org)
+web-server, to display and edit RNA triplexes as shown in the [TriplexRNA](https://triplexrna.org)
 database.
 
 - [Installation requirements](#installation-requirements)
