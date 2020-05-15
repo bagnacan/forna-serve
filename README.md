@@ -95,7 +95,8 @@ The scheme of the triplex *T* will be: ``&colors=>T\n1-GL:lightgrey\nGL+1-M1L:li
 
 ### Example
 
-Using the aforementioned syntax, we compose a URL to display the RNA triplex [97544](https://triplexrna.org/human/E/E2F1_hsa-miR-205_hsa-miR-342-3p%20%28MFE-50.563%29.png).  
+Using the aforementioned syntax, we compose a URL to display the RNA triplex [97544](https://triplexrna.org/human/E/E2F1_hsa-miR-205_hsa-miR-342-3p%20%28MFE-50.563%29.png).
+
 The triplex is formed by Human (hg19) target gene [E2F1](https://www.ncbi.nlm.nih.gov/nuccore/NM_005225),
 miRNA [hsa-miR-205](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000266),
 and miRNA [hsa-miR-342-3p](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000753).  
@@ -105,13 +106,17 @@ and miRNA [hsa-miR-342-3p](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIM
 2. Triplex identifier  
   ``?id=url/97544``
 3. Sequence  
-  ``&sequence=ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaagguuccuucauuccaccggagucugucucacacagaaaucgcacccgu``  
+  ```
+  &sequence=ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaagguuccuucauuccaccggagucugucucacacagaaaucgcacccgu
+  ```  
   Where:
     - E2F1 ``ccgggggugaaugugugugagcaugugugugugcauguaccggggaaugaaggu``
     - hsa-miR-205 ``uccuucauuccaccggagucug``
     - hsa-miR-342-3p ``ucucacacagaaaucgcacccgu``
 4. Structure  
-  ``&structure=.((((.((((.(.(((((((((((((......)))))..((((((((((((((..)))))))))).)))).......))))))))..).)))).)))).``
+  ```
+  &structure=.((((.((((.(.(((((((((((((......)))))..((((((((((((((..)))))))))).)))).......))))))))..).)))).)))).
+  ```
 5. Target gene  
   ``&gene=E2F1``
 6. 1st miRNA  
