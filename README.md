@@ -57,8 +57,8 @@ visualizations, and provide a sample query.
 
 ### URL syntax
 
-The syntax to visualize RNA molecules is based on the one defined by forna, and
-extended to distinguish the different RNAs of a triplex:
+The syntax to visualize RNA molecules is based on the one defined by [forna](https://github.com/ViennaRNA/forna),
+and extended to distinguish the different RNAs of a triplex:
 
 1. Host  
 If you are running the forna-serve container on your localhost, this will
