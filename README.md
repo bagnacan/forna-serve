@@ -87,14 +87,8 @@ The color scheme of the 3 different segments, to be counted in nucleotides.
 Supposing that:
   - *G* should be colored lightgrey, its sequence starts at nt. 1, and ends at nt. *GL*
   - *M1* should be colored lightgreen, its sequence starts at nt. *GL+1* and ends at nt. *M1L*
-  - *M2* should be colored red, its sequence starts at nt. *M1L+1* and ends at nt. *M2L*
-The scheme of the triplex *T* must be indicated by:
-```
-&colors=>T\n
-1-GL:lightgrey\n
-GL+1-M1L:lightgreen\n
-M1L+1-M2L:red
-```
+  - *M2* should be colored red, its sequence starts at nt. *M1L+1* and ends at nt. *M2L*  
+The scheme of the triplex *T* will be: ``&colors=>T\n1-GL:lightgrey\nGL+1-M1L:lightgreen\nM1L+1-M2L:red``
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
