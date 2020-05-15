@@ -10,6 +10,9 @@ database.
 
 - [Installation requirements](#installation-requirements)
 - [Run forna-serve](#run-forna-serve)
+- [Usage](#usage)
+  - [URL syntax](#url-syntax)
+  - [Example](#example)
 
 
 
@@ -40,4 +43,16 @@ localhost:9090/ping
 
 You should receive a ``pong`` reply. If so, the service is up and running!  
 You can now send proper forna queries to visualize and edit RNA triplexes.
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+
+
+## Usage
+
+Here we explain the input syntax that is required for requesting RNA triplex
+visualizations, and provide an example to display the triplex formed by:
+
+- Human target gene [E2F1](https://www.ncbi.nlm.nih.gov/nuccore/NM_005225)
+- Human miRNA [hsa-miR-205](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000266)
+- Human miRNA [hsa-miR-342-3p](http://www.mirbase.org/cgi-bin/mirna_entry.pl?acc=MIMAT0000753).
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
